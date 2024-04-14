@@ -64,7 +64,7 @@ cd /tmp
 git clone git@github.com:artur-sannikov/local-quadlets.git
 ```
 
-2. Move Quadlet files to `~/.config/containers/systemd`.
+2. Move Quadlet files to `~/.config/containers/systemd`
 
 ```bash
 cd local-quadlets
