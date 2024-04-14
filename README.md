@@ -55,9 +55,38 @@ wget https://github.com/tesseract-ocr/tessdata/raw/main/fin.traineddata
 mv ~/Downloads/fin.traineddata ~/podman/appdata/stirling-pdf/tessdata
 ```
 
-## Clone repo
+## Activate Quadlets
+
+1. Clone this repo
 
 ```bash
 cd /tmp
 git clone git@github.com:artur-sannikov/local-quadlets.git
-mv local-quadlets/{chatgpt-web,stirling-pdf} ~/.config/containers/systemd
+```
+
+2. Move Quadlet files to `~/.config/containers/systemd`.
+
+```bash
+cd local-quadlets
+
+mv chatgpt-web/ ~/.config/containers/systemd
+mv stirling-pdf/ ~/.config/containers/systemd
+```
+
+3. Reload daemon
+
+```bash
+systemctl --user daemon-reload
+```
+
+4. Start containers
+
+```bash
+systemctl --user start chatgpt-web.service
+systemctl --user start stirling-pdf.service
+```
+
+5. Check if services are running
+
+    1. Go to `localhost:5173` to access ChatGPT Web-UI
+    2. Go to `localhost:8080` to access Stirling PDF
