@@ -2,7 +2,7 @@
 ContainerName=chatgpt-web
 Image=localhost/chatgpt-web
 PublishPort=5173:5173
-Volume=%h/podman/appdata/chatgpt-web/app:/app:z
+Volume=%h/podman/appdata/chatgpt-web/app:/app:Z
 
 # Hardening
 NoNewPrivileges=true
