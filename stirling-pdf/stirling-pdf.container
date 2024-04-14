@@ -1,4 +1,5 @@
 [Container]
+ContainerName=stirling-pdf
 Image=docker.io/frooodle/s-pdf:latest
 AutoUpdate=registry
 PublishPort=8080:8080
