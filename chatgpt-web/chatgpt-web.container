@@ -1,0 +1,18 @@
+[Container]
+ContainerName=chatgpt-web
+Image=localhost/chatgpt-web
+PublishPort=5173:5173
+Volume=%h/podman/appdata/chatgpt-web/app:/app:z
+
+# Hardening
+NoNewPrivileges=true
+DropCapability=all
+
+[Service]
+Restart=always
+
+# Hardening
+DevicePolicy=closed
+
+[Install]
+WantedBy=default.target
