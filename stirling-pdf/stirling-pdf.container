@@ -1,0 +1,22 @@
+[Container]
+Image=docker.io/frooodle/s-pdf:latest
+AutoUpdate=registry
+PublishPort=8080:8080
+Volume=%h/podman/appdata/stirling-pdf/tessdata:/usr/share/tesseract-ocr/5/tessdata:Z
+Volume=%h/podman/appdata/stirling-pdf/logs:/logs:Z
+
+# Hardening
+NoNewPrivileges=true
+DropCapability=all
+AddCapability=CHOWN
+AddCapability=SETGID
+AddCapability=SETUID
+
+[Service]
+Restart=always
+
+# Hardening
+DevicePolicy=closed
+
+[Install]
+WantedBy=default.target
